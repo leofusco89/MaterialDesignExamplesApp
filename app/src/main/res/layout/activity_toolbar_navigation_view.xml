@@ -5,7 +5,8 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ToolbarNavigationViewActivity">
+    tools:context=".ToolbarNavigationViewActivity"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,5 +33,4 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:menu="@menu/menu_navigation_items" />
-
 </androidx.drawerlayout.widget.DrawerLayout>

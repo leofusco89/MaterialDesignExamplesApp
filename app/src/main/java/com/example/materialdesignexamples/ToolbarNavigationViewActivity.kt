@@ -1,6 +1,7 @@
 package com.example.materialdesignexamples
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -22,17 +23,23 @@ class ToolbarNavigationViewActivity : AppCompatActivity() {
     }
 
     private fun configurarNavigationView() {
-        drawerLayout = findViewById(R.id.drawerLayout)
-        val drawerToggle =
-            ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close)
-        drawerLayout.addDrawerListener(drawerToggle)
-        drawerToggle.syncState()
 
         navigationView = findViewById(R.id.navigationView)
+
+        navigationView.menu.add("abc")
+
+        drawerLayout = findViewById(R.id.drawerLayout)
+        val drawerToggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close)
+        drawerLayout.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
         navigationView.setNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.menuIrA -> irA() //Implementar
-                R.id.menuSalir -> finish()
+//            when (it.itemId) {
+//                R.id.menuIrA -> irA() //Implementar
+//                R.id.menuSalir -> finish()
+//            }
+            when (it.title) {
+                "Salir" -> Toast.makeText(this, "abc opcion", Toast.LENGTH_SHORT).show()
+                "abc" -> Toast.makeText(this, "abc opcion", Toast.LENGTH_SHORT).show()
             }
             drawerLayout.closeDrawers()
             true
